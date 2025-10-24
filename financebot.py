@@ -16,7 +16,8 @@ if not server_chan_keys_env:
     raise ValueError("环境变量 SERVER_CHAN_KEYS 未设置，请在Github Actions中设置此变量！")
 server_chan_keys = server_chan_keys_env.split(",")
 
-openai_client = OpenAI(api_key=openai_api_key, base_url="https://api.deepseek.com/v1")
+openai_client = OpenAI(api_key=openai_api_key, base_url="https://api.x.ai/v1")
+openai_model = os.getenv("OPENAI_MODEL", "grok-code-fast-1")
 
 # RSS源地址列表
 rss_feeds = {
